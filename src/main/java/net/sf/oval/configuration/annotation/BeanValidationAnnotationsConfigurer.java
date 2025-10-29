@@ -16,30 +16,29 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
-import javax.validation.Valid;
-import javax.validation.constraints.AssertFalse;
-import javax.validation.constraints.AssertTrue;
-import javax.validation.constraints.DecimalMax;
-import javax.validation.constraints.DecimalMin;
-import javax.validation.constraints.Digits;
-import javax.validation.constraints.Future;
-import javax.validation.constraints.FutureOrPresent;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.Negative;
-import javax.validation.constraints.NegativeOrZero;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Null;
-import javax.validation.constraints.Past;
-import javax.validation.constraints.PastOrPresent;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Pattern.Flag;
-import javax.validation.constraints.Positive;
-import javax.validation.constraints.PositiveOrZero;
-import javax.validation.constraints.Size;
-
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.AssertFalse;
+import jakarta.validation.constraints.AssertTrue;
+import jakarta.validation.constraints.DecimalMax;
+import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.Digits;
+import jakarta.validation.constraints.Future;
+import jakarta.validation.constraints.FutureOrPresent;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.Negative;
+import jakarta.validation.constraints.NegativeOrZero;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Null;
+import jakarta.validation.constraints.Past;
+import jakarta.validation.constraints.PastOrPresent;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Pattern.Flag;
+import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.PositiveOrZero;
+import jakarta.validation.constraints.Size;
 import net.sf.oval.Check;
 import net.sf.oval.ConstraintTarget;
 import net.sf.oval.collection.CollectionFactory;
@@ -79,33 +78,33 @@ import net.sf.oval.internal.util.ReflectionUtils;
  * <p>
  * <b>JSR-303:</b>
  * <ul>
- * <li>javax.validation.constraints.AssertFalse => net.sf.oval.constraint.AssertFalseCheck
- * <li>javax.validation.constraints.AssertTrue => net.sf.oval.constraint.AssertTrueCheck
- * <li>javax.validation.constraints.DecimalMax => net.sf.oval.constraint.MaxCheck
- * <li>javax.validation.constraints.DecimalMin => net.sf.oval.constraint.MinCheck
- * <li>javax.validation.constraints.Digits => net.sf.oval.constraint.DigitsCheck
- * <li>javax.validation.constraints.Future => net.sf.oval.constraint.FutureCheck
- * <li>javax.validation.constraints.Max => net.sf.oval.constraint.MaxCheck
- * <li>javax.validation.constraints.Min => net.sf.oval.constraint.MinCheck
- * <li>javax.validation.constraints.NotNull => net.sf.oval.constraint.NotNullCheck
- * <li>javax.validation.constraints.Null => net.sf.oval.constraint.AssertNullCheck
- * <li>javax.validation.constraints.Past => net.sf.oval.constraint.PastCheck
- * <li>javax.validation.constraints.Pattern => net.sf.oval.constraint.PatternCheck
- * <li>javax.validation.constraints.Size => net.sf.oval.constraint.SizeCheck
- * <li>javax.validation.Valid => net.sf.oval.constraint.AssertValidCheck
+ * <li>jakarta.validation.constraints.AssertFalse => net.sf.oval.constraint.AssertFalseCheck
+ * <li>jakarta.validation.constraints.AssertTrue => net.sf.oval.constraint.AssertTrueCheck
+ * <li>jakarta.validation.constraints.DecimalMax => net.sf.oval.constraint.MaxCheck
+ * <li>jakarta.validation.constraints.DecimalMin => net.sf.oval.constraint.MinCheck
+ * <li>jakarta.validation.constraints.Digits => net.sf.oval.constraint.DigitsCheck
+ * <li>jakarta.validation.constraints.Future => net.sf.oval.constraint.FutureCheck
+ * <li>jakarta.validation.constraints.Max => net.sf.oval.constraint.MaxCheck
+ * <li>jakarta.validation.constraints.Min => net.sf.oval.constraint.MinCheck
+ * <li>jakarta.validation.constraints.NotNull => net.sf.oval.constraint.NotNullCheck
+ * <li>jakarta.validation.constraints.Null => net.sf.oval.constraint.AssertNullCheck
+ * <li>jakarta.validation.constraints.Past => net.sf.oval.constraint.PastCheck
+ * <li>jakarta.validation.constraints.Pattern => net.sf.oval.constraint.PatternCheck
+ * <li>jakarta.validation.constraints.Size => net.sf.oval.constraint.SizeCheck
+ * <li>jakarta.validation.Valid => net.sf.oval.constraint.AssertValidCheck
  * </ul>
  * <p>
  * <b>JSR-380:</b>
  * <ul>
- * <li>javax.validation.constraints.Email => net.sf.oval.constraint.EmailCheck
- * <li>javax.validation.constraints.FutureOrPresent => net.sf.oval.constraint.DateRangeCheck(min="now")
- * <li>javax.validation.constraints.Negative => net.sf.oval.constraint.MaxCheck(max=0, inclusive=false)
- * <li>javax.validation.constraints.NegativeOrZero => net.sf.oval.constraint.MaxCheck(max=0, inclusive=true)
- * <li>javax.validation.constraints.NotBlank => net.sf.oval.constraint.NotBlankCheck
- * <li>javax.validation.constraints.NotEmpty => net.sf.oval.constraint.NotEmptyCheck
- * <li>javax.validation.constraints.PastOrPresent => net.sf.oval.constraint.DateRange(max="now")
- * <li>javax.validation.constraints.Positive => net.sf.oval.constraint.MinCheck(min=0, inclusive=false)
- * <li>javax.validation.constraints.PositiveOrZero => net.sf.oval.constraint.NotNegativeCheck
+ * <li>jakarta.validation.constraints.Email => net.sf.oval.constraint.EmailCheck
+ * <li>jakarta.validation.constraints.FutureOrPresent => net.sf.oval.constraint.DateRangeCheck(min="now")
+ * <li>jakarta.validation.constraints.Negative => net.sf.oval.constraint.MaxCheck(max=0, inclusive=false)
+ * <li>jakarta.validation.constraints.NegativeOrZero => net.sf.oval.constraint.MaxCheck(max=0, inclusive=true)
+ * <li>jakarta.validation.constraints.NotBlank => net.sf.oval.constraint.NotBlankCheck
+ * <li>jakarta.validation.constraints.NotEmpty => net.sf.oval.constraint.NotEmptyCheck
+ * <li>jakarta.validation.constraints.PastOrPresent => net.sf.oval.constraint.DateRange(max="now")
+ * <li>jakarta.validation.constraints.Positive => net.sf.oval.constraint.MinCheck(min=0, inclusive=false)
+ * <li>jakarta.validation.constraints.PositiveOrZero => net.sf.oval.constraint.NotNegativeCheck
  * </ul>
  *
  * @author Sebastian Thomschke
@@ -441,7 +440,7 @@ public class BeanValidationAnnotationsConfigurer implements Configurer {
       /*
        * process bean validation annotations
        */
-      if (annoClass.getAnnotation(javax.validation.Constraint.class) != null || anno instanceof Valid) {
+      if (annoClass.getAnnotation(jakarta.validation.Constraint.class) != null || anno instanceof Valid) {
 
          final Check[] mappedChecks = CONSTRAINT_MAPPER.map(anno);
 

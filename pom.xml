@@ -15,7 +15,7 @@
 
    <groupId>net.sf.oval</groupId>
    <artifactId>oval</artifactId>
-   <version>3.2.2-SNAPSHOT</version>
+   <version>4.0.0</version>
    <packaging>jar</packaging>
 
 
@@ -469,9 +469,9 @@
          <optional>true</optional>
       </dependency>
       <dependency>
-         <groupId>javax.persistence</groupId>
-         <artifactId>persistence-api</artifactId>
-         <version>1.0.2</version>
+         <groupId>jakarta.persistence</groupId>
+         <artifactId>jakarta.persistence-api</artifactId>
+         <version>3.1.0</version>
          <optional>true</optional>
       </dependency>
       <dependency>

@@ -20,7 +20,7 @@ Require-Bundle: org.aspectj.runtime;bundle-version="${org.aspectj:aspectjrt:jar.
 Export-Package: net.sf.oval,
  net.sf.oval.collection,
  net.sf.oval.configuration,
- net.sf.oval.configuration.annotation;uses:="javax.persistence",
+ net.sf.oval.configuration.annotation;uses:="jakarta.persistence",
  net.sf.oval.configuration.pojo,
  net.sf.oval.configuration.pojo.elements,
  net.sf.oval.configuration.xml,
