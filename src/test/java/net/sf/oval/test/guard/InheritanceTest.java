@@ -6,10 +6,9 @@ package net.sf.oval.test.guard;
 
 import static org.assertj.core.api.Assertions.*;
 
-import javax.validation.ConstraintViolationException;
-
 import org.junit.Test;
 
+import jakarta.validation.ConstraintViolationException;
 import net.sf.oval.constraint.AssertFieldConstraints;
 import net.sf.oval.constraint.NotNull;
 import net.sf.oval.exception.ConstraintsViolatedException;

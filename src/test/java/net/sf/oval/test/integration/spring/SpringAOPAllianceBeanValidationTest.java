@@ -6,12 +6,11 @@ package net.sf.oval.test.integration.spring;
 
 import static org.assertj.core.api.Assertions.*;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-
 import org.junit.Test;
 import org.springframework.aop.framework.ProxyFactory;
 
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import net.sf.oval.configuration.annotation.BeanValidationAnnotationsConfigurer;
 import net.sf.oval.exception.ConstraintsViolatedException;
 import net.sf.oval.guard.Guard;

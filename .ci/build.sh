@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: EPL-2.0
 #
 # @author Sebastian Thomschke, https://sebthom.de/
-
+set -x # abort script at first error
 set -e # abort script at first error
 set -o pipefail # causes a pipeline to return the exit status of the last command in the pipe that returned a non-zero return value
 
@@ -31,7 +31,7 @@ fi
 echo "  -> GIT Branch: $GIT_BRANCH"; echo
 
 
-MAVEN_VERSION=3.8.2 # https://maven.apache.org/download.cgi
+MAVEN_VERSION=3.9.11 # https://maven.apache.org/download.cgi
 if [[ ! -e $HOME/.m2/bin/apache-maven-$MAVEN_VERSION ]]; then
    echo
    echo "###################################################"

@@ -260,14 +260,14 @@ anything else you like.
 OVal comes with a configurer that is capable of translating certain EJB3 JPA annotations into equivalent OVal constraints.
 The `net.sf.oval.configuration.annotation.JPAAnnotationsConfigurer` interprets the EJB3 JPA annotations as follows:
 
-    @javax.persistence.Basic(optional=false)     => @net.sf.oval.constraint.NotNull
-    @javax.persistence.OneToOne(optional=false)  => @net.sf.oval.constraint.NotNull
-    @javax.persistence.OneToOne                  => @net.sf.oval.constraint.AssertValid
-    @javax.persistence.OneToMany                 => @net.sf.oval.constraint.AssertValid
-    @javax.persistence.ManyToOne(optional=false) => @net.sf.oval.constraint.NotNull
-    @javax.persistence.ManyToOne                 => @net.sf.oval.constraint.AssertValid
-    @javax.persistence.Column(nullable=false)    => @net.sf.oval.constraint.NotNull (only applied for fields not annotated with @javax.persistence.GeneratedValue or @javax.persistence.Version)
-    @javax.persistence.Column(length=5)          => @net.sf.oval.constraint.Length
+    @jakarta.persistence.Basic(optional=false)     => @net.sf.oval.constraint.NotNull
+    @jakarta.persistence.OneToOne(optional=false)  => @net.sf.oval.constraint.NotNull
+    @jakarta.persistence.OneToOne                  => @net.sf.oval.constraint.AssertValid
+    @jakarta.persistence.OneToMany                 => @net.sf.oval.constraint.AssertValid
+    @jakarta.persistence.ManyToOne(optional=false) => @net.sf.oval.constraint.NotNull
+    @jakarta.persistence.ManyToOne                 => @net.sf.oval.constraint.AssertValid
+    @jakarta.persistence.Column(nullable=false)    => @net.sf.oval.constraint.NotNull (only applied for fields not annotated with @javax.persistence.GeneratedValue or @javax.persistence.Version)
+    @jakarta.persistence.Column(length=5)          => @net.sf.oval.constraint.Length
 
 ```java
 @Entity
@@ -303,33 +303,33 @@ List<ConstraintViolation> violations = validator.validate(entity);
 ### <a name="bean-validation-annotations"></a>Interpreting Bean Validation annotations
 
 OVal itself is not a JSR303/JSR380 compliant bean validation framework. However it now comes with a configurer
-that can translate the standard Bean Validation constraints (javax.validation.constraints.\*) into equivalent
+that can translate the standard Bean Validation constraints (jakarta.validation.constraints.\*) into equivalent
 OVal constraints. The `net.sf.oval.configuration.annotation.BeanValidationAnnotationsConfigurer`
 interprets the annotations as follows:
 
-    @javax.validation.constraints.AssertFalse     => @net.sf.oval.constraint.AssertFalse
-    @javax.validation.constraints.AssertTrue      => @net.sf.oval.constraint.AssertTrue
-    @javax.validation.constraints.DecimalMax      => @net.sf.oval.constraint.Max
-    @javax.validation.constraints.DecimalMin      => @net.sf.oval.constraint.Min
-    @javax.validation.constraints.Digits          => @net.sf.oval.constraint.Digits
-    @javax.validation.constraints.Email           => @net.sf.oval.constraint.Email
-    @javax.validation.constraints.Future          => @net.sf.oval.constraint.Future
-    @javax.validation.constraints.FutureOrPresent => @net.sf.oval.constraint.Future(min="now")
-    @javax.validation.constraints.Max             => @net.sf.oval.constraint.Max
-    @javax.validation.constraints.Min             => @net.sf.oval.constraint.Min
-    @javax.validation.constraints.Negative        => @net.sf.oval.constraint.Max(max=0, inclusive=false)
-    @javax.validation.constraints.NegativeOrZero  => @net.sf.oval.constraint.Max(max=0, inclusive=true)
-    @javax.validation.constraints.NotBlank        => @net.sf.oval.constraint.NotNull+NotBlank
-    @javax.validation.constraints.NotEmpty        => @net.sf.oval.constraint.NotNull+NotEmpty
-    @javax.validation.constraints.NotNull         => @net.sf.oval.constraint.NotNull
-    @javax.validation.constraints.Null            => @net.sf.oval.constraint.Null
-    @javax.validation.constraints.Past            => @net.sf.oval.constraint.Past
-    @javax.validation.constraints.PastOrPresent   => @net.sf.oval.constraint.Past(max="now")
-    @javax.validation.constraints.Pattern         => @net.sf.oval.constraint.Pattern
-    @javax.validation.constraints.Size            => @net.sf.oval.constraint.Size
-    @javax.validation.constraints.Positive        => @net.sf.oval.constraint.Min(min=0, inclusive=false)
-    @javax.validation.constraints.PositiveOrZero  => @net.sf.oval.constraint.NotNegative
-    @javax.validation.constraints.Valid           => @net.sf.oval.constraint.AssertValid
+    @jakarta.validation.constraints.AssertFalse     => @net.sf.oval.constraint.AssertFalse
+    @jakarta.validation.constraints.AssertTrue      => @net.sf.oval.constraint.AssertTrue
+    @jakarta.validation.constraints.DecimalMax      => @net.sf.oval.constraint.Max
+    @jakarta.validation.constraints.DecimalMin      => @net.sf.oval.constraint.Min
+    @jakarta.validation.constraints.Digits          => @net.sf.oval.constraint.Digits
+    @jakarta.validation.constraints.Email           => @net.sf.oval.constraint.Email
+    @jakarta.validation.constraints.Future          => @net.sf.oval.constraint.Future
+    @jakarta.validation.constraints.FutureOrPresent => @net.sf.oval.constraint.Future(min="now")
+    @jakarta.validation.constraints.Max             => @net.sf.oval.constraint.Max
+    @jakarta.validation.constraints.Min             => @net.sf.oval.constraint.Min
+    @jakarta.validation.constraints.Negative        => @net.sf.oval.constraint.Max(max=0, inclusive=false)
+    @jakarta.validation.constraints.NegativeOrZero  => @net.sf.oval.constraint.Max(max=0, inclusive=true)
+    @jakarta.validation.constraints.NotBlank        => @net.sf.oval.constraint.NotNull+NotBlank
+    @jakarta.validation.constraints.NotEmpty        => @net.sf.oval.constraint.NotNull+NotEmpty
+    @jakarta.validation.constraints.NotNull         => @net.sf.oval.constraint.NotNull
+    @jakarta.validation.constraints.Null            => @net.sf.oval.constraint.Null
+    @jakarta.validation.constraints.Past            => @net.sf.oval.constraint.Past
+    @jakarta.validation.constraints.PastOrPresent   => @net.sf.oval.constraint.Past(max="now")
+    @jakarta.validation.constraints.Pattern         => @net.sf.oval.constraint.Pattern
+    @jakarta.validation.constraints.Size            => @net.sf.oval.constraint.Size
+    @jakarta.validation.constraints.Positive        => @net.sf.oval.constraint.Min(min=0, inclusive=false)
+    @jakarta.validation.constraints.PositiveOrZero  => @net.sf.oval.constraint.NotNegative
+    @jakarta.validation.constraints.Valid           => @net.sf.oval.constraint.AssertValid
 
 ```java
 public class MyEntity {
